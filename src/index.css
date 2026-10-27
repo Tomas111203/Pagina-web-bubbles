@@ -185,14 +185,20 @@ img {
   color: #ffffff;
   font-family: var(--font-heading);
   font-weight: 900;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   text-align: center;
-  padding: 6px 10px;
-  border-radius: 6px;
+  width: 52px;
+  height: 52px;
+  aspect-ratio: 1 / 1;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   letter-spacing: 0.04em;
-  display: inline-block;
   line-height: 1.1;
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 /* Cards */

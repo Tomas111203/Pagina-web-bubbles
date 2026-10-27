@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AlertTriangle, ThermometerSnowflake, ShieldCheck, Heart, Info, Check, BarChart3 } from 'lucide-react';
+import OctagonSeal from './OctagonSeal';
 
 export default function NutritionSection() {
   const [portionMode, setPortionMode] = useState('portion'); // 'portion' or '100g'
@@ -114,9 +115,7 @@ export default function NutritionSection() {
                 <h3 style={{ fontSize: '1.75rem', fontWeight: 900, margin: 0, textTransform: 'uppercase' }}>
                   Declaración Nutrimental
                 </h3>
-                <span className="badge-seal" style={{ backgroundColor: '#111827', color: '#fff', fontSize: '0.65rem' }}>
-                  NOM-051
-                </span>
+                <OctagonSeal size={42} text1="NOM" text2="051" />
               </div>
               <div style={{ fontSize: '0.85rem', color: '#4b5563', fontFamily: 'var(--font-body)' }}>
                 Sabor: Chocolate Belga Intenso

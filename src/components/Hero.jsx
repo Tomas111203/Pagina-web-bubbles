@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
 import { Sparkles, ArrowRight, ShieldCheck, Flame, Zap, Award } from 'lucide-react';
+import OctagonSeal from './OctagonSeal';
 
 export default function Hero({ onAddToCart }) {
   const [popCount, setPopCount] = useState(0);
@@ -100,11 +101,11 @@ export default function Hero({ onAddToCart }) {
           {/* Left Column: Headlines & Value Prop */}
           <div>
             {/* Project Origin Badge */}
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
               <span className="badge-tag">
                 <Award size={14} /> Orgullo UAA • 9° Semestre Emprendedores
               </span>
-              <span className="badge-seal">EXCESO PROTEÍNA</span>
+              <OctagonSeal size={48} text1="EXCESO" text2="PROTEÍNA" />
             </div>
 
             {/* Main Title */}

@@ -12,7 +12,7 @@ export default function Footer({ onOpenLegalModal }) {
         color: '#9ca3af'
       }}>
         <div className="container">
-          
+
           {/* Main Footer Columns */}
           <div style={{
             display: 'grid',
@@ -20,7 +20,7 @@ export default function Footer({ onOpenLegalModal }) {
             gap: '40px',
             marginBottom: '48px'
           }}>
-            
+
             {/* Col 1: Brand & Slogan */}
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
@@ -45,7 +45,7 @@ export default function Footer({ onOpenLegalModal }) {
 
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/bubbles_energy11?xtok=MWZzYWk0MjZ3OHQ1cQ%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noreferrer"
                   style={{
