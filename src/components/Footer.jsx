@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageCircle, Mail, MapPin, Shield, Award, Sparkles } from 'lucide-react';
+import logo1 from '../../img/logo1.png';
 
 export default function Footer({ onOpenLegalModal }) {
   return (
@@ -25,7 +26,7 @@ export default function Footer({ onOpenLegalModal }) {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '14px' }}>
                 <img
-                  src="./img/logo1.png"
+                  src={logo1}
                   alt="BUBBLES Logo"
                   style={{ width: '48px', height: 'auto' }}
                 />

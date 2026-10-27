@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
 import { Sparkles, ArrowRight, ShieldCheck, Flame, Zap, Award } from 'lucide-react';
 import OctagonSeal from './OctagonSeal';
+import producto2 from '../../img/producto2.png';
 
 export default function Hero({ onAddToCart }) {
   const [popCount, setPopCount] = useState(0);
@@ -201,7 +202,7 @@ export default function Hero({ onAddToCart }) {
                 marginBottom: '20px'
               }}>
                 <img
-                  src="./img/producto2.png"
+                  src={producto2}
                   alt="BUBBLES Perlas Explosivas de Chocolate"
                   style={{
                     width: '100%',

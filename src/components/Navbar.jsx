@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ShoppingBag, Menu, X, Sparkles, MapPin } from 'lucide-react';
+import logo2 from '../../img/logo2.png';
 
 export default function Navbar({ cartCount, onOpenCart }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -59,7 +60,7 @@ export default function Navbar({ cartCount, onOpenCart }) {
         {/* Brand Logo */}
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <img
-            src="./img/logo2.png"
+            src={logo2}
             alt="BUBBLES - Revienta la Rutina"
             style={{
               height: '48px',

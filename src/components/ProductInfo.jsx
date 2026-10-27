@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Sparkles, Layers, Package, Clock, Eye, ShieldAlert } from 'lucide-react';
+import producto1 from '../../img/producto1.png';
 
 export default function ProductInfo() {
   const [selectedFlavor, setSelectedFlavor] = useState('chocolate');
@@ -168,7 +169,7 @@ export default function ProductInfo() {
                 backgroundColor: '#ffffff'
               }}>
                 <img
-                  src="./img/producto1.png"
+                  src={producto1}
                   alt="BUBBLES Envase de Perlas Explosivas con sello Exceso Proteína"
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />

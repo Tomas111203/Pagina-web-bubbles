@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Users, Star, MapPin, Sparkles, Building, Heart } from 'lucide-react';
+import logo1 from '../../img/logo1.png';
 
 export default function AboutUs() {
   const testimonials = [
@@ -72,7 +73,7 @@ export default function AboutUs() {
             opacity: 0.05,
             pointerEvents: 'none'
           }}>
-            <img src="./img/logo1.png" alt="" style={{ width: '380px' }} />
+            <img src={logo1} alt="" style={{ width: '380px' }} />
           </div>
 
           <div style={{ maxWidth: '820px', position: 'relative', zIndex: 1 }}>
