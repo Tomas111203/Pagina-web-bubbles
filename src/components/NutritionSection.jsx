@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { AlertTriangle, ThermometerSnowflake, ShieldCheck, Heart, Info, Check, BarChart3 } from 'lucide-react';
 import OctagonSeal from './OctagonSeal';
 
@@ -7,37 +7,45 @@ export default function NutritionSection() {
 
   const nutritionData = {
     portion: {
-      label: 'Por Porción (45 g aprox. 3 cucharadas)',
-      energyKcal: '118 kcal (495 kJ)',
-      protein: '20.0 g',
-      proteinDaily: '40%',
-      totalFat: '1.2 g',
-      saturatedFat: '0.4 g',
-      transFat: '0 mg',
-      carbs: '3.8 g',
-      sugars: '1.1 g',
-      addedSugars: '0 g',
-      fiber: '1.4 g',
-      sodium: '42 mg',
-      calcium: '180 mg (18% VDR)',
-      bcaa: '4.6 g',
+      label: 'Por Porción (30,55 g, 1 medida)',
+      energyKcal: '123,4 kcal (516,1 kJ)',
+      protein: '22 g',
+      totalFat: '1,9 g',
+      otherFats: '0 g',
+      carbs: '1,9 g',
+      sugars: '0,001 g',
+      sodium: '95,5 mg',
+      bcaa: '2,9 g',
+      creatine: '900 mg',
+      vitaminC: '477 mg',
+      riboflavin: '67 mg',
+      niacin: '57 mg',
+      pyridoxine: '48 mg',
+      vitaminA: '688 mcg',
+      potassium: '191 mg',
+      magnesium: '191 mg',
+      zinc: '19 mg',
     },
     '100g': {
       label: 'Por 100 gramos de producto',
-      energyKcal: '262 kcal (1,100 kJ)',
-      protein: '44.4 g',
-      proteinDaily: '89%',
-      totalFat: '2.7 g',
-      saturatedFat: '0.9 g',
-      transFat: '0 mg',
-      carbs: '8.4 g',
-      sugars: '2.4 g',
-      addedSugars: '0 g',
-      fiber: '3.1 g',
-      sodium: '93 mg',
-      calcium: '400 mg (40% VDR)',
-      bcaa: '10.2 g',
-    }
+      energyKcal: '404 kcal (1689 kJ)',
+      protein: '72 g',
+      totalFat: '6,22 g',
+      otherFats: '0 g',
+      carbs: '6,22 g',
+      sugars: '0,003 g',
+      sodium: '313,0 mg',
+      bcaa: '9,5 g',
+      creatine: '2,95 g',
+      vitaminC: '1,5 g',
+      riboflavin: '219 mg',
+      niacin: '187 mg',
+      pyridoxine: '157 mg',
+      vitaminA: '2,2 mg',
+      potassium: '625 mg',
+      magnesium: '625 mg',
+      zinc: '62,2 mg',
+    },
   };
 
   const current = nutritionData[portionMode];
@@ -45,7 +53,7 @@ export default function NutritionSection() {
   return (
     <section id="nutricion" className="section-padding" style={{ backgroundColor: '#222222' }}>
       <div className="container">
-        
+
         {/* Header */}
         <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 56px' }}>
           <div className="badge-tag" style={{ marginBottom: '12px' }}>
@@ -168,7 +176,7 @@ export default function NutritionSection() {
                 <span style={{ fontWeight: 800 }}>Contenido Energético</span>
                 <span style={{ fontWeight: 800 }}>{current.energyKcal}</span>
               </div>
-              
+
               {/* Highlight Protein */}
               <div style={{
                 display: 'flex',
@@ -190,12 +198,8 @@ export default function NutritionSection() {
                 <span>{current.totalFat}</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0 4px 16px', color: '#6b7280', borderBottom: '1px solid #e5e7eb' }}>
-                <span>Grasa Saturada</span>
-                <span>{current.saturatedFat}</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0 4px 16px', color: '#6b7280', borderBottom: '1px solid #e5e7eb' }}>
-                <span>Grasas Trans</span>
-                <span>{current.transFat}</span>
+                <span>Otras Grasas</span>
+                <span style={{ fontWeight: 700, color: '#10b981' }}>{current.otherFats}</span>
               </div>
 
               <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #e5e7eb' }}>
@@ -206,24 +210,53 @@ export default function NutritionSection() {
                 <span>Azúcares Totales</span>
                 <span>{current.sugars}</span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0 4px 16px', color: '#6b7280', borderBottom: '1px solid #e5e7eb' }}>
-                <span>Azúcares Añadidos</span>
-                <span style={{ fontWeight: 700, color: '#10b981' }}>{current.addedSugars} (Cero)</span>
-              </div>
-
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #e5e7eb' }}>
-                <span style={{ fontWeight: 600 }}>Fibra Dietética</span>
-                <span>{current.fiber}</span>
-              </div>
 
               <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #e5e7eb' }}>
                 <span style={{ fontWeight: 600 }}>Sodio</span>
                 <span>{current.sodium}</span>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #e5e7eb' }}>
                 <span style={{ fontWeight: 600 }}>BCAAs Naturales (Leucina, Isoleucina, Valina)</span>
                 <span style={{ fontWeight: 700, color: '#2563eb' }}>{current.bcaa}</span>
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #e5e7eb' }}>
+                <span style={{ fontWeight: 600 }}>Creatina</span>
+                <span style={{ fontWeight: 700, color: '#7c3aed' }}>{current.creatine}</span>
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid #e5e7eb' }}>
+                <span style={{ fontWeight: 600, color: '#4b5563' }}>Vitamina C</span>
+                <span>{current.vitaminC}</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid #e5e7eb' }}>
+                <span style={{ fontWeight: 600, color: '#4b5563' }}>Riboflavina (B2)</span>
+                <span>{current.riboflavin}</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid #e5e7eb' }}>
+                <span style={{ fontWeight: 600, color: '#4b5563' }}>Niacina (B3)</span>
+                <span>{current.niacin}</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid #e5e7eb' }}>
+                <span style={{ fontWeight: 600, color: '#4b5563' }}>Piridoxina (B6)</span>
+                <span>{current.pyridoxine}</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid #e5e7eb' }}>
+                <span style={{ fontWeight: 600, color: '#4b5563' }}>Vitamina A</span>
+                <span>{current.vitaminA}</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid #e5e7eb' }}>
+                <span style={{ fontWeight: 600, color: '#4b5563' }}>Potasio</span>
+                <span>{current.potassium}</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid #e5e7eb' }}>
+                <span style={{ fontWeight: 600, color: '#4b5563' }}>Magnesio</span>
+                <span>{current.magnesium}</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0' }}>
+                <span style={{ fontWeight: 600, color: '#4b5563' }}>Zinc</span>
+                <span>{current.zinc}</span>
               </div>
             </div>
 
@@ -234,7 +267,7 @@ export default function NutritionSection() {
 
           {/* Right: Ingredients, Allergens & Cold Chain */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            
+
             {/* Ingredients Card */}
             <div className="card-glass">
               <h3 style={{ fontSize: '1.35rem', color: '#ffffff', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '10px' }}>
