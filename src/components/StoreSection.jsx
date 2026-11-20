@@ -3,24 +3,22 @@ import { ShoppingBag, Truck, Snowflake, MapPin, ShieldCheck, Check, Sparkles, Pl
 
 export default function StoreSection({ onAddToCart }) {
   const [quantities, setQuantities] = useState({
-    individual: 1,
-    duo: 1,
-    pro1kg: 1
+    '500g': 1,
+    '1kg': 1
   });
 
   const [selectedFlavors, setSelectedFlavors] = useState({
-    individual: 'Chocolate Belga Intenso',
-    duo: 'Chocolate Belga Intenso (x2)',
-    pro1kg: 'Chocolate Belga Intenso'
+    '500g': 'Chocolate Belga Intenso',
+    '1kg': 'Chocolate Belga Intenso'
   });
 
   const products = [
     {
-      id: 'individual',
-      name: 'BUBBLES Individual 500g',
-      badge: 'Ideal Para Iniciar',
+      id: '500g',
+      name: 'BUBBLES 500g',
+      badge: 'Presentación 500g',
       badgeColor: '#60a5fa',
-      price: 249,
+      price: 170,
       servings: '10 - 14 Porciones',
       description: 'Bote hermético de 500 gramos con perlas de chocolate y 20g de proteína de suero por porción.',
       features: [
@@ -32,37 +30,20 @@ export default function StoreSection({ onAddToCart }) {
       popular: false
     },
     {
-      id: 'duo',
-      name: 'BUBBLES Dúo Pack (2 x 500g)',
-      badge: '¡El Más Vendido!',
+      id: '1kg',
+      name: 'BUBBLES 1kg',
+      badge: 'Presentación 1kg • Más Ahorro',
       badgeColor: '#ea580c',
-      price: 449,
-      regularPrice: 498,
-      servings: '20 - 28 Porciones',
-      description: 'Dos botes de 500g. Asegura tu suministro mensual y califica para envío local GRATIS en Aguascalientes.',
-      features: [
-        '1,000g totales de perlas (2 botes)',
-        'Envío GRATIS en Aguascalientes',
-        'Ahorro directo de $49 MXN',
-        'Empaque térmico reforzado'
-      ],
-      popular: true
-    },
-    {
-      id: 'pro1kg',
-      name: 'BUBBLES Edición Pro 1kg',
-      badge: 'Presentación Gym / Familiar',
-      badgeColor: '#10b981',
-      price: 399,
+      price: 250.95,
       servings: '22 - 28 Porciones',
-      description: 'Formato institucional de 1 Kilogramo neto como se muestra en la etiqueta oficial. Máximo rendimiento por tu dinero.',
+      description: 'Formato institucional de 1 Kilogramo neto. Mayor rendimiento y el mejor costo por gramo de proteína.',
       features: [
         '1 Kilogramo neto de producto',
-        'Ideal para atletas y shakers diarios',
+        'Ideal para atletas y consumo diario',
         'Sello hermético de frescura',
         'Entrega refrigerada local'
       ],
-      popular: false
+      popular: true
     }
   ];
 
@@ -97,7 +78,7 @@ export default function StoreSection({ onAddToCart }) {
             Elige tu Presentación <span className="text-gradient-gold">BUBBLES</span>
           </h2>
           <p style={{ color: '#9ca3af', fontSize: '1rem', lineHeight: 1.6 }}>
-            Precios justos con IVA incluido basados en el estudio de mercado ($200 - $350 MXN). Empacado en frío con entrega express en Aguascalientes o recolección gratuita en la UAA.
+            Precios justos con IVA incluido. Empacado en frío con entrega express en Aguascalientes o recolección gratuita en la UAA.
           </p>
         </div>
 
@@ -179,7 +160,9 @@ export default function StoreSection({ onAddToCart }) {
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))',
           gap: '28px',
-          alignItems: 'stretch'
+          alignItems: 'stretch',
+          maxWidth: '860px',
+          margin: '0 auto'
         }}>
           {products.map((prod) => (
             <div
@@ -241,7 +224,7 @@ export default function StoreSection({ onAddToCart }) {
                 {/* Price Display */}
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '16px' }}>
                   <span style={{ fontSize: '2.5rem', fontWeight: 900, color: '#ffffff', fontFamily: 'var(--font-heading)' }}>
-                    ${prod.price}
+                    ${prod.price % 1 === 0 ? prod.price : prod.price.toFixed(2)}
                   </span>
                   <span style={{ fontSize: '0.9rem', color: '#9ca3af' }}>MXN (IVA inc.)</span>
                   {prod.regularPrice && (
@@ -283,8 +266,8 @@ export default function StoreSection({ onAddToCart }) {
                       fontSize: '0.875rem'
                     }}
                   >
-                    <option value={prod.id === 'duo' ? 'Chocolate Belga Intenso (x2)' : 'Chocolate Belga Intenso'}>
-                      {prod.id === 'duo' ? 'Chocolate Belga Intenso (x2)' : 'Chocolate Belga Intenso'}
+                    <option value="Chocolate Belga Intenso">
+                      Chocolate Belga Intenso
                     </option>
                   </select>
                 </div>

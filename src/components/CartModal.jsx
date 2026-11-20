@@ -51,6 +51,11 @@ export default function CartModal({
   const shippingCost = deliveryMethod === 'pickup' ? 0 : subtotal >= 400 ? 0 : 45;
   const total = subtotal + shippingCost;
 
+  const formatPrice = (val) => {
+    const num = Number(val);
+    return num % 1 === 0 ? num : num.toFixed(2);
+  };
+
   const handleCopyClabe = () => {
     navigator.clipboard.writeText('646180112233445566');
     setCopiedClabe(true);
@@ -98,13 +103,13 @@ export default function CartModal({
   const generateWhatsAppLink = () => {
     if (!orderSummary) return '#';
     const itemsText = orderSummary.items
-      .map((i) => `• ${i.quantity}x ${i.name} (${i.flavor}) - $${i.price * i.quantity} MXN`)
+      .map((i) => `• ${i.quantity}x ${i.name} (${i.flavor}) - $${formatPrice(i.price * i.quantity)} MXN`)
       .join('%0A');
 
     const msg = `¡Hola BUBBLES UAA! Realicé el pedido demo *%23${orderSummary.orderNumber}*%0A%0A` +
       `*Cliente:* ${orderSummary.customer.name}%0A` +
       `*Método:* ${orderSummary.deliveryMethod === 'pickup' ? 'Recolección UAA' : 'Envío local Aguascalientes'}%0A` +
-      `*Total:* $${orderSummary.total} MXN%0A%0A` +
+      `*Total:* $${formatPrice(orderSummary.total)} MXN%0A%0A` +
       `*Productos:*%0A${itemsText}%0A%0A` +
       `*Método de Pago:* ${orderSummary.paymentMethod.toUpperCase()}%0A` +
       (orderSummary.needInvoice ? `*Factura CFDI solicitada:* RFC ${orderSummary.customer.rfc}%0A` : '') +
@@ -188,7 +193,7 @@ export default function CartModal({
                             {item.flavor}
                           </div>
                           <div style={{ fontSize: '0.875rem', color: '#d1d5db', marginTop: '4px' }}>
-                            ${item.price} MXN c/u
+                            ${formatPrice(item.price)} MXN c/u
                           </div>
                         </div>
 
@@ -220,7 +225,7 @@ export default function CartModal({
                         {/* Item Total & Delete */}
                         <div style={{ textAlign: 'right', minWidth: '75px' }}>
                           <div style={{ fontWeight: 800, color: '#ffffff' }}>
-                            ${item.price * item.quantity} MXN
+                            ${formatPrice(item.price * item.quantity)} MXN
                           </div>
                           <button
                             onClick={() => onRemoveItem(item.id)}
@@ -256,7 +261,7 @@ export default function CartModal({
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', color: '#9ca3af' }}>
                       <span>Subtotal (IVA incluido)</span>
                       <span style={{ color: '#ffffff', fontWeight: 700, fontSize: '1.1rem' }}>
-                        ${subtotal} MXN
+                        ${formatPrice(subtotal)} MXN
                       </span>
                     </div>
 
@@ -266,7 +271,7 @@ export default function CartModal({
                       </div>
                     ) : (
                       <div style={{ color: '#f59e0b', fontSize: '0.825rem' }}>
-                        Agrega ${400 - subtotal} MXN más para obtener envío local GRATIS.
+                        Agrega ${formatPrice(400 - subtotal)} MXN más para obtener envío local GRATIS.
                       </div>
                     )}
                   </div>
@@ -809,7 +814,7 @@ export default function CartModal({
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: '#9ca3af', fontSize: '0.875rem', marginBottom: '4px' }}>
                   <span>Subtotal</span>
-                  <span>${subtotal} MXN</span>
+                  <span>${formatPrice(subtotal)} MXN</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: '#9ca3af', fontSize: '0.875rem', marginBottom: '8px' }}>
                   <span>Costo de Envío</span>
@@ -817,7 +822,7 @@ export default function CartModal({
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: '#ffffff', fontWeight: 800, fontSize: '1.25rem' }}>
                   <span>Total a Pagar (IVA incluido)</span>
-                  <span style={{ color: '#f59e0b' }}>${total} MXN</span>
+                  <span style={{ color: '#f59e0b' }}>${formatPrice(total)} MXN</span>
                 </div>
               </div>
 
@@ -898,7 +903,7 @@ export default function CartModal({
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '4px' }}>
                   <span style={{ color: '#ffffff', fontWeight: 700 }}>Total Pagado:</span>
-                  <span style={{ color: '#f59e0b', fontWeight: 800, fontSize: '1rem' }}>${orderSummary.total} MXN</span>
+                  <span style={{ color: '#f59e0b', fontWeight: 800, fontSize: '1rem' }}>${formatPrice(orderSummary.total)} MXN</span>
                 </div>
               </div>
 

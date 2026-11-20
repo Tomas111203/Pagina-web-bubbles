@@ -17,12 +17,12 @@ export default function App() {
   const [cartItems, setCartItems] = useState([
     // Start with 1 item for convenient demonstration of cart capability
     {
-      id: 'duo',
-      name: 'BUBBLES Dúo Pack (2 x 500g)',
-      price: 449,
+      id: '500g',
+      name: 'BUBBLES 500g',
+      price: 170,
       quantity: 1,
-      flavor: 'Chocolate Belga Intenso (x2)',
-      servings: '20 - 28 Porciones'
+      flavor: 'Chocolate Belga Intenso',
+      servings: '10 - 14 Porciones'
     }
   ]);
 
