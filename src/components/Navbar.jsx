@@ -7,6 +7,7 @@ export default function Navbar({ cartCount, onOpenCart }) {
 
   const navLinks = [
     { name: 'Producto', href: '#producto' },
+    { name: 'Comercial', href: '#comercial' },
     { name: 'Nutrición', href: '#nutricion' },
     { name: 'Modo de Uso', href: '#modo-uso' },
     { name: 'Tienda', href: '#tienda' },

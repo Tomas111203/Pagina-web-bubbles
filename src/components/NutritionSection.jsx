@@ -151,7 +151,7 @@ export default function NutritionSection() {
                   fontSize: '0.825rem'
                 }}
               >
-                Por Porción (45 g)
+                Por Porción (30,55 g)
               </button>
               <button
                 onClick={() => setPortionMode('100g')}

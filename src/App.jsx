@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProductInfo from './components/ProductInfo';
+import CommercialVideo from './components/CommercialVideo';
 import NutritionSection from './components/NutritionSection';
 import HowToUse from './components/HowToUse';
 import StoreSection from './components/StoreSection';
@@ -113,6 +114,7 @@ export default function App() {
       <main>
         <Hero onAddToCart={handleAddToCart} />
         <ProductInfo />
+        <CommercialVideo />
         <NutritionSection />
         <HowToUse />
         <StoreSection onAddToCart={handleAddToCart} />
